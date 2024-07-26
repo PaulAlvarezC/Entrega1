@@ -61,6 +61,10 @@
 								<p style="text-align: justify; text-justify: inter-word;"><%=session.getAttribute("letra")%></p>
 							</div>
 							<div class="col-lg-3">
+								<strong>Indice Letra más repetida: </strong>
+								<p style="text-align: justify; text-justify: inter-word;"><%=session.getAttribute("indiceMayorFreq")%></p>
+							</div>
+							<div class="col-lg-3">
 								<strong>Veces: </strong>
 								<p style="text-align: justify; text-justify: inter-word;"><%=session.getAttribute("mayor")%></p>
 							</div>
@@ -90,6 +94,10 @@
 								<p style="text-align: justify; text-justify: inter-word;"><%=session.getAttribute("letterMaxFreq")%></p>
 							</div>
 							<div class="col-lg-3">
+								<strong>Indice Letra mayor frecuencia: </strong>
+								<p style="text-align: justify; text-justify: inter-word;"><%=session.getAttribute("indexAbecedario")%></p>
+							</div>
+							<div class="col-lg-3">
 								<strong>Porcentaje mayor: </strong>
 								<p style="text-align: justify; text-justify: inter-word;"><%=session.getAttribute("perMaxFreq")%>
 									%
@@ -111,15 +119,15 @@
 					<div class="accordion-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<strong>Diferencia entre tablas: </strong>
-								<p style="text-align: justify; text-justify: inter-word;"><%=session.getAttribute("intIndex")%></p>
+								<strong>Transformación: </strong>
+								<p style="text-align: justify; text-justify: inter-word;"><%=session.getAttribute("transformacion")%></p>
 							</div>
 							<div class="col col-lg-12">
 								<strong>Salida: </strong>
 								<div style="padding-left: 0px;">
 									<%
 										for(int x = 0; x < results.length; x++)
-											out.println(x+1 + "->" + results[x] + "<br />");
+											out.println("->" + results[x] + "<br />");
 									%>
 								</div>
 							</div>

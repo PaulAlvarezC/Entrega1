@@ -23,13 +23,11 @@ public class Main extends HttpServlet {
     	//DEFINICION DEL ABECEDARIO
     	String letters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 		int alphSize = letters.length();
-		System.out.println("LETTERS SIZE: " + alphSize);
 		
 		//INGRESO DE DATOS
     	String textOrigin = request.getParameter("textOrigin");
     	//CALCULO DE PALABRAS
     	int wordCount = textOrigin.split("\\s+|\n|,").length;
-    	System.out.println("WORDS SIZE: " + wordCount);
     	
     	//VALIDAMOS LOS DATOS DE ENTRADA QUE SEAN MAYOR A 100 PALABRAS
     	if (wordCount < 100) {
@@ -40,15 +38,12 @@ public class Main extends HttpServlet {
     		//SI ES MAYOR A 100
     		textOrigin = textOrigin.toUpperCase();
     		int textSize = textOrigin.length();
-    		System.out.println("TEXT: " + textOrigin);
-    		System.out.println("TEXT SIZE: " + textSize);
     		char alphabet[] = new char[alphSize];
     		int frequency[] = new int[alphSize];
     		
     		//CALCULO CARACTERES
     		char c = 'A';
     		for (int i = 0; i < alphSize; i++) {
-    			System.out.println("LETTER: " + c + " -> " + i);
     			alphabet[i] = c;
     			frequency[i] = 0;
     			//VALIDACION PARA AGREGAR Ñ EN MAPEO
@@ -73,18 +68,12 @@ public class Main extends HttpServlet {
             	}
             }
             
-            System.out.println("OUTPUT:");
-            System.out.println("==========================");
-            System.out.println("ALPHABET\tFREQUENCY");
-            System.out.println("==========================");
-            
             Map<String, Integer> newMap = new HashMap<String, Integer>();
             //IMPRIMO CON FORMATO EL MAPA
             for (int i = 0; i < alphSize; i++) {
             	if (frequency[i] != 0) {
             		int d = frequency[i];
     				newMap.put(String.valueOf(alphabet[i]), d);
-            		System.out.println(" " + alphabet[i] + "\t\t   " + frequency[i]);
             	}
             }
             
@@ -129,8 +118,6 @@ public class Main extends HttpServlet {
     		}
     		//CREO EL ABECEDARIO EN TIPO ARRAY PARA SACAR VALOR VAR = letters
     		int indexAbecedario = letters.indexOf(key);
-    		System.out.println("indexAbecedario: " + indexAbecedario);
-    		System.out.println("indiceMayorFreq: " + indiceMayorFreq);
     		int transformacion = 0;
     		//CALCULO LA DIFERENCIA PARA OBTENER RESULTADO
     		if (indiceMayorFreq < indexAbecedario) {
@@ -140,20 +127,15 @@ public class Main extends HttpServlet {
     		} else {
 	    		transformacion = indiceMayorFreq - indexAbecedario;
     		}
-    		System.out.println("transformacion: " + transformacion);
     		
     		//RESULTADOS
     		String result = "";
-    		System.out.println("INDICE: " + intIndex);
-    		System.out.println("TEXTO DECODIFICADO");
     		    		
             for (int x = 1; x <= intIndex; x++) {
             	if (x == transformacion) {
-            		System.out.println(decodificar(textOrigin.toUpperCase(), transformacion));
             		result += decodificar(textOrigin.toUpperCase(), x) + "/";
             	}
     		}
-            System.out.println("==========================");
     		
     		session.setAttribute("map", map.entrySet());
     		session.setAttribute("letterMaxFreq", key);

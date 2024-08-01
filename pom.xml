@@ -37,25 +37,6 @@
 	    <artifactId>jstl</artifactId>
 	    <version>1.2</version>
 	</dependency>
-	<!-- Core NLP Natural Language Processing in Java -->
-	<!-- Replace “models” with one or more of “models-english”, “models-french”, “models-german” or “models-spanish” -->
-	<dependency>
-	    <groupId>edu.stanford.nlp</groupId>
-	    <artifactId>stanford-corenlp</artifactId>
-	    <version>4.4.0</version>
-	</dependency>
-	<dependency>
-	    <groupId>edu.stanford.nlp</groupId>
-	    <artifactId>stanford-corenlp</artifactId>
-	    <version>4.4.0</version>
-	    <classifier>models</classifier>
-	</dependency>
-	<dependency>
-	    <groupId>edu.stanford.nlp</groupId>
-	    <artifactId>stanford-corenlp</artifactId>
-	    <version>4.4.0</version>
-	    <classifier>models-spanish</classifier>
-	</dependency>
   </dependencies>
 
   <build>
